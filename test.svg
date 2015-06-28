@@ -1,0 +1,15 @@
+<svg  xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 1920 1080">
+  <defs>
+    <clipPath id="top">
+      <path d="M 360,0 1150,760 1920,0 Z"></path>
+    </clipPath>
+    <filter id="contrast">
+      <feComponentTransfer>
+        <feFuncR type="discrete" tableValues="0.5"/>
+        <feFuncG type="discrete" tableValues="0.5"/>
+        <feFuncB type="discrete" tableValues="0.5"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <image xlink:href="bg_pc.png" x="0" y="0" height="1080" width="1920" clip-path="url(#top)" style="filter: url(#contrast)"></image>
+</svg>

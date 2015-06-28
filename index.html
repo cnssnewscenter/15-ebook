@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+  <meta charset="UTF-8">
+  <title>珍藏青春 昨日重现</title>
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body class="load">
+  <div class="layer loader">
+    <img src="bg_pc.png">
+  </div>
+  <div class="background layer">
+    <svg  xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 1920 1080">
+      <image xlink:href="bg_pc.png" x="0" y="0" height="1080" width="1920"></image>
+    </svg>
+  </div>
+  <div class="layer mask">
+
+  </div>
+  <div class="left layer">
+    <svg  x="0" y="0" viewBox="0 0 1920 1080">
+      <path style="fill:#000000;fill-rule:evenodd;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;opacity:0.3;fill-opacity:1"
+    d="M 0,0 246.07316,2.3692641 1339.6138,1080 0,1080 Z"/>
+    </svg>
+  </div>
+  <div class="layer right">
+    <svg  x="0" y="0" viewBox="0 0 1920 1080">
+      <path style="fill:#000000;fill-rule:evenodd;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;opacity:0.3;fill-opacity:1"
+    d="M 1920,0 844.28545,1080 1920,1080 Z"/>
+    </svg>
+  </div>
+  <div class="layer top">
+    <svg  xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 1920 1080">
+      <defs>
+        <clipPath id="top">
+          <path d="M 360,0 1110,760 1860,0 Z"></path>
+        </clipPath>
+        <filter id="contrast">
+          <feComponentTransfer>
+            <feFuncR type="linear" slope="1.2"/>
+            <feFuncG type="linear" slope="1.2"/>
+            <feFuncB type="linear" slope="1.2"/>
+          </feComponentTransfer>
+        </filter>
+      </defs>
+      <image xlink:href="bg_pc.png" x="0" y="0" height="1080" width="1920" clip-path="url(#top)" style="filter: url(#contrast)"></image>
+    </svg>
+  </div>
+  <div class="layer title">
+      <img src="title.png" alt="">
+  </div>
+  <div class="layer">
+    <div class="download">
+      <img src="qrcode.png" class="qrcode">
+      <p>扫描二维码下载（13M）<p>
+      <p><a href="">或点击链接手动下载</a></p>
+    </div>
+  </div>
+  <div class="layer loading">
+    <div class="sk-spinner sk-spinner-wave">
+      <div class="sk-rect1"></div>
+      <div class="sk-rect2"></div>
+      <div class="sk-rect3"></div>
+      <div class="sk-rect4"></div>
+      <div class="sk-rect5"></div>
+      <p>载入中</p>
+    </div>
+  </div>
+  <script>
+    document.getElementsByTagName('img')[0].addEventListener('load', function(event){
+      document.getElementsByTagName('body')[0].className = ''; // remove the loading layer and starting animation
+      setTimeout(function(){
+        var elem = document.getElementsByClassName('loading')[0];
+        elem.parentNode.removeChild(elem);
+      }, 500)
+    })
+  </script>
+</body>
+</html>
