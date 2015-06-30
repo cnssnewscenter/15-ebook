@@ -18,16 +18,9 @@ svg{
   opacity: 0
 }
 .background{
-  @media (min-width: 1280px){
-  }
-  @media (max-width: 1279px){
-    svg{
-      display: none;
-    }
-    background-image: url(bg_pc.png);
-    background-size: cover;
-    background-position: center center;
-  }
+  background-image: url(bg_pc.png);
+  background-size: cover;
+  background-position: center center;
   transition: opacity 0.5s 0.3s;
 }
 .top {
@@ -62,15 +55,7 @@ svg{
   @media (max-width: 1280px){
     display: none;
   }
-  transition: left 0.5s 0.5s;
-}
-.mask{
-  @media (max-width: 1280px){
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-  @media (min-width: 1279px){
-    background-color: rgba(0 ,0 ,0, 0.2);
-  }
+  transition: all 0.5s 0.5s;
 }
 .download{
   opacity: 1;
@@ -189,13 +174,46 @@ img.qrcode{
     opacity: 0;
     z-index: 0;
   }
-  .left{
-    left: -100%;
+  .left-box{
+      -webkit-clip-path: polygon(-60% 0%, -50% 0%, 0% 100%, 0 100%);
   }
-  .right{
-    left: 100%;
+  .right-box{
+      -webkit-clip-path: polygon(160% 0%, 100% 100%, 160% 100%);
   }
-  .top{
-    opacity: 0;
+  .top-box{
+      -webkit-clip-path: polygon(20% -60%, 50% 0%, 90% -60%);
   }
+}
+.left-box{
+    height: 100%; width: 100%;
+    -webkit-clip-path: polygon(0% 0%, 10% 0%, 60% 100%, 0 100%);
+    background-image: url(bg_pc.png);
+    -webkit-filter: brightness(0.4);
+    transition: all 0.5s 0.5s;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    opacity: 0.8;
+}
+.right-box{
+    height: 100%; width: 100%;
+    opacity: 0.8;
+    -webkit-clip-path: polygon(100% 0%, 40% 100%, 100% 100%);
+    background-image: url(bg_pc.png);
+    -webkit-filter: brightness(0.4);
+    transition: all 0.5s 0.5s;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+.top-box{
+    height: 100%; width: 100%;
+    opacity: 0.8;
+    -webkit-clip-path: polygon(20% 0%, 51% 60%, 90% 0%);
+    background-image: url(bg_pc.png);
+    -webkit-filter: brightness(1.6) contrast(150%);
+    transition: all 0.5s 0.5s;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
 }
